@@ -133,8 +133,8 @@ def illu(draw, kind, x, y, w, h):
         draw.rectangle([x, y, x + w, y + h], fill=(30, 130, 60))
         draw.rectangle([x + 10, y + h - 24, x + w - 10, y + h - 6], fill=(120, 200, 90))
         draw.line([(x + 10, cy + 18), (x + w - 10, cy + 18)], fill=(220, 200, 140), width=2)
-        draw.rectangle([cx - 4, y + 12, cx + 4, y + 46], fill=(200, 160, 90))
-        draw.ellipse([cx - 14, y + 42, cx + 14, y + 64], fill=(200, 160, 90))
+        draw.rectangle([cx - 4, y + 12, cx + 4, y + 40], fill=(200, 160, 90))
+        draw.ellipse([cx - 14, y + 36, cx + 14, y + h - 4], fill=(200, 160, 90))
         draw.ellipse([x + w - 26, y + 10, x + w - 14, y + 22], fill=RED)
         for sx in [x + 12, x + 24, x + 36]:
             draw.line([(sx, y + h - 34), (sx, y + h - 24)], fill=(255, 255, 255), width=2)
@@ -292,11 +292,11 @@ def main():
         if x < W - 16:
             d.line([(x, 136), (x, 196)], fill=RED, width=1)
     regions = [("Europe 11", (20, 60, 140)), ("Asia 12", RED), ("Middle East 5", (140, 110, 20)),
-               ("Africa 5", (30, 120, 60)), ("Americas 9", (110, 50, 140)), ("Oceania 3", TEAL), ("Glob 3", (80, 80, 80))]
+               ("Africa 5", (30, 120, 60)), ("Americas 9", (110, 50, 140)), ("Ocean 3", TEAL), ("Glob 3", (80, 80, 80))]
     x = 16
     total_w = W - 32
     for name, col in regions:
-        rw = total_w * {"Europe 11": 11, "Asia 12": 12, "Middle East 5": 5, "Africa 5": 5, "Americas 9": 9, "Oceania 3": 3, "Glob 3": 3}[name] / 48
+        rw = total_w * {"Europe 11": 11, "Asia 12": 12, "Middle East 5": 5, "Africa 5": 5, "Americas 9": 9, "Ocean 3": 3, "Glob 3": 3}[name] / 48
         d.rectangle([x, 200, x + rw, 218], fill=col)
         d.text((x + 4, 203), name, font=F_SMALLB, fill=(255, 255, 255))
         x += rw
